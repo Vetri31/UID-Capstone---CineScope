@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineScope — All Movies</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--NAVBAR  (active class = Movies)-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Cine<span>Scope</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="movies.html">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link" href="login.html">Log In</a></li>
+          <li class="nav-item ms-lg-1"><a href="signup.html" class="btn btn-gold">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Page Header ────────────────────────────────────────── -->
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label">Full Collection</span>
+      <h1 class="section-title">All Movies</h1>
+      <hr class="section-divider center" />
+      <p style="color:var(--muted);font-size:.9rem;max-width:440px;margin:0 auto;">
+        Browse our full catalogue of critically acclaimed and audience-loved films.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── Filter Bar ─────────────────────────────────────────── -->
+  <section class="section-pad" style="padding-bottom:0;">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-md-5">
+            <input type="text" id="searchInput" class="form-input" placeholder="Search movies by title…" />
+          </div>
+          <div class="col-6 col-md-3">
+            <select id="genreFilter" class="form-input">
+              <option value="">All Genres</option>
+              <option value="sci-fi">Sci-Fi</option>
+              <option value="action">Action</option>
+              <option value="drama">Drama</option>
+              <option value="thriller">Thriller</option>
+              <option value="superhero">Superhero</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2">
+            <button id="clearFilters" class="btn btn-outline-gold w-100">Clear</button>
+          </div>
+          <div class="col-12 col-md-2 text-md-end">
+            <span style="font-size:.78rem;color:var(--muted);">
+              Showing <strong id="resultCount" style="color:var(--gold);">10</strong> films
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Movies Grid ─────────────────────────────────────────── -->
+  <section class="section-pad" style="padding-top:30px;">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3" id="moviesGrid">
+
+        <div class="col afu d1 movie-item" data-title="interstellar" data-genre="sci-fi">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/interstellar.jpg" alt="Interstellar" loading="lazy" />
+              <span class="card-badge">Sci-Fi</span>
+              <span class="card-rating">★ 8.7</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Drama</p>
+              <h3 class="card-title-text">Interstellar</h3>
+              <p class="card-desc">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival as Earth faces collapse.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=interstellar" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d2 movie-item" data-title="inception" data-genre="sci-fi">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/inception.jpg" alt="Inception" loading="lazy" />
+              <span class="card-badge">Thriller</span>
+              <span class="card-rating">★ 8.8</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Thriller</p>
+              <h3 class="card-title-text">Inception</h3>
+              <p class="card-desc">A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into a CEO's mind.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=inception" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d3 movie-item" data-title="the dark knight" data-genre="action">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/darkknight.jpg" alt="The Dark Knight" loading="lazy" />
+              <span class="card-badge">Classic</span>
+              <span class="card-rating">★ 9.0</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Action / Crime</p>
+              <h3 class="card-title-text">The Dark Knight</h3>
+              <p class="card-desc">When the Joker wreaks havoc on Gotham, Batman must accept one of the greatest psychological tests of his ability to fight injustice.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=darkknight" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d4 movie-item" data-title="avengers endgame" data-genre="superhero">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/endgame.jpg" alt="Avengers: Endgame" loading="lazy" />
+              <span class="card-badge">Marvel</span>
+              <span class="card-rating">★ 8.4</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Action / Superhero</p>
+              <h3 class="card-title-text">Avengers: Endgame</h3>
+              <p class="card-desc">After Infinity War's devastating events, the Avengers assemble once more to undo Thanos' actions and restore balance to the universe.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=endgame" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d5 movie-item" data-title="joker" data-genre="drama">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/joker.jpg" alt="Joker" loading="lazy" />
+              <span class="card-badge">Drama</span>
+              <span class="card-rating">★ 8.4</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Drama / Thriller</p>
+              <h3 class="card-title-text">Joker</h3>
+              <p class="card-desc">A troubled comedian descends into revolution and crime when Gotham City rejects him — an origin story unlike any other.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=joker" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d6 movie-item" data-title="the matrix" data-genre="sci-fi">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/matrix.jpg" alt="The Matrix" loading="lazy" />
+              <span class="card-badge">Iconic</span>
+              <span class="card-rating">★ 8.7</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Action</p>
+              <h3 class="card-title-text">The Matrix</h3>
+              <p class="card-desc">A computer hacker learns the world he lives in is a simulated reality and joins rebels fighting the machine controllers behind it.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=matrix" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d1 movie-item" data-title="spider-man across the spider-verse" data-genre="action">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/spiderverse.jpg" alt="Spider-Man: Across the Spider-Verse" loading="lazy" />
+              <span class="card-badge">New</span>
+              <span class="card-rating">★ 8.6</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Animation / Action</p>
+              <h3 class="card-title-text">Spider-Man: Across the Spider-Verse</h3>
+              <p class="card-desc">Miles Morales catapults across the Multiverse where he must redefine what it means to be a hero when the Spider-People clash.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=spiderverse" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d2 movie-item" data-title="everything everywhere all at once" data-genre="sci-fi">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/eeaao.jpg" alt="Everything Everywhere All at Once" loading="lazy" />
+              <span class="card-badge">Award</span>
+              <span class="card-rating">★ 7.8</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Comedy</p>
+              <h3 class="card-title-text">Everything Everywhere All at Once</h3>
+              <p class="card-desc">An aging Chinese immigrant can only save existence by exploring other universes and connecting with the lives she could have led.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=eeaao" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d3 movie-item" data-title="top gun maverick" data-genre="action">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/topgun.jpg" alt="Top Gun: Maverick" loading="lazy" />
+              <span class="card-badge">Trending</span>
+              <span class="card-rating">★ 8.3</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Action / Drama</p>
+              <h3 class="card-title-text">Top Gun: Maverick</h3>
+              <p class="card-desc">Maverick is back after 30 years — pushing limits as a test pilot while training a new generation of Top Gun graduates for an impossible mission.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=topgun" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d4 movie-item" data-title="dune" data-genre="sci-fi">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/dune.jpg" alt="Dune" loading="lazy" />
+              <span class="card-badge">Epic</span>
+              <span class="card-rating">★ 8.0</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Epic</p>
+              <h3 class="card-title-text">Dune</h3>
+              <p class="card-desc">A noble family becomes embroiled in a war for the universe's most valuable resource on the deadly desert planet of Arrakis.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=dune" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="noResults" class="text-center py-5" style="display:none;">
+        <p style="color:var(--muted);font-size:1rem;">No movies match your search.</p>
+        <button class="btn btn-outline-gold mt-3" onclick="document.getElementById('clearFilters').click()">Clear Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!--FOOTER  (identical on every page)-->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <p class="footer-brand">CineScope</p>
+          <p class="footer-tagline">Your cinematic universe,<br>discovered and curated.</p>
+        </div>
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="details.html">Details</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-links">
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 CineScope. Crafted for cinema lovers everywhere.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineScope — Discover Cinema</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--NAVBAR  (identical on every page — active class = Home)-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Cine<span>Scope</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link" href="login.html">Log In</a></li>
+          <li class="nav-item ms-lg-1"><a href="signup.html" class="btn btn-gold">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">&#9733; Your Cinema Universe</span>
+      <h1 class="hero-title">Cine<span class="accent">Scope</span></h1>
+      <p class="hero-tagline">
+        Discover, explore, and fall in love with great films — all in one beautifully curated place.
+      </p>
+      <div class="hero-cta">
+        <a href="movies.html" class="btn btn-gold">Explore Movies</a>
+        <a href="#featured" class="btn btn-outline-gold">Featured Picks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Bar ──────────────────────────────────────────── -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="row text-center justify-content-center">
+        <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-number">12K+</span><span class="stat-label">Movies</span></div></div>
+        <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-number">40+</span><span class="stat-label">Genres</span></div></div>
+        <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-number">98%</span><span class="stat-label">User Rating</span></div></div>
+        <div class="col-6 col-md-3"><div class="stat-item"><span class="stat-number">150+</span><span class="stat-label">Countries</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Featured Movies ────────────────────────────────────── -->
+  <section class="section-pad" id="featured">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-label">Editor's Choice</span>
+        <h2 class="section-title">Featured This Week</h2>
+        <hr class="section-divider center" />
+      </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+
+        <div class="col afu d1">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/spiderverse.jpg" alt="Spider-Man: Across the Spider-Verse" loading="lazy" />
+              <span class="card-badge">New</span> 
+              <span class="card-rating">★ 8.6</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Animation / Action</p>
+              <h3 class="card-title-text">Spider-Man: Across the Spider-Verse</h3>
+              <p class="card-desc">Miles Morales catapults across the Multiverse and must redefine what it means to be a hero when the Spider-People clash over a new threat.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=spiderverse" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d2">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/eeaao.jpg" alt="Everything Everywhere All at Once" loading="lazy" />
+              <span class="card-badge">Award</span>
+              <span class="card-rating">★ 7.8</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Comedy</p>
+              <h3 class="card-title-text">Everything Everywhere All at Once</h3>
+              <p class="card-desc">An aging Chinese immigrant is swept up in an adventure where she alone can save existence by exploring other universes.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=eeaao" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d3">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/topgun.jpg" alt="Top Gun: Maverick" loading="lazy" />
+              <span class="card-badge">Trending</span>
+              <span class="card-rating">★ 8.3</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Action / Drama</p>
+              <h3 class="card-title-text">Top Gun: Maverick</h3>
+              <p class="card-desc">After 30+ years of service, Pete "Maverick" Mitchell is back, pushing limits as a test pilot while training a new generation of Top Gun graduates.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=topgun" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col afu d4">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/dune.jpg" alt="Dune" loading="lazy" />
+              <span class="card-badge">Epic</span>
+              <span class="card-rating">★ 8.0</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Epic</p>
+              <h3 class="card-title-text">Dune</h3>
+              <p class="card-desc">A noble family becomes embroiled in a war for the universe's most valuable resource on a deadly desert planet.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=dune" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-5">
+        <a href="movies.html" class="btn btn-outline-gold">View All Movies &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER  (identical on every page)-->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <p class="footer-brand">CineScope</p>
+          <p class="footer-tagline">Your cinematic universe,<br>discovered and curated.</p>
+        </div>
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="details.html">Details</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-links">
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 CineScope. Crafted for cinema lovers everywhere.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

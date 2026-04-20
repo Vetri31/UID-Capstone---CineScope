@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineScope — Movie Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--NAVBAR  (active class = Movies)-->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Cine<span>Scope</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="movies.html">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link" href="login.html">Log In</a></li>
+          <li class="nav-item ms-lg-1"><a href="signup.html" class="btn btn-gold">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Breadcrumb ─────────────────────────────────────────── -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="movies.html">Movies</a></li>
+        <li class="breadcrumb-item active" id="bcMovie">Movie Details</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── Movie Selector Pills ───────────────────────────────── -->
+  <div style="background:var(--bg-card);border-bottom:1px solid var(--border);padding:12px 0;">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <span style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">Select Movie:</span>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="movie-pill" data-key="spiderverse">Spider-Man</button>
+          <button class="movie-pill" data-key="eeaao">Everything Everywhere</button>
+          <button class="movie-pill" data-key="topgun">Top Gun</button>
+          <button class="movie-pill" data-key="dune">Dune</button>
+          <button class="movie-pill" data-key="interstellar">Interstellar</button>
+          <button class="movie-pill" data-key="inception">Inception</button>
+          <button class="movie-pill" data-key="darkknight">Dark Knight</button>
+          <button class="movie-pill" data-key="endgame">Endgame</button>
+          <button class="movie-pill" data-key="joker">Joker</button>
+          <button class="movie-pill" data-key="matrix">The Matrix</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Details Hero ───────────────────────────────────────── -->
+  <section class="details-hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="details-poster afu d1">
+            <img id="moviePoster" src="" alt="Movie Poster" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-9">
+          <div class="meta-pills afu d1">
+            <span class="meta-pill" id="pillYear"></span>
+            <span class="meta-pill genre" id="pillGenre"></span>
+            <span class="meta-pill" id="pillRating"></span>
+            <span class="meta-pill genre" id="pillRuntime"></span>
+          </div>
+          <h1 class="details-title afu d2" id="movieTitle"></h1>
+          <p class="details-desc afu d3" id="movieDesc"></p>
+          <div class="afu d3">
+            <table class="info-table mb-4">
+              <tbody>
+                <tr><td>Director</td><td id="infoDirector"></td></tr>
+                <tr><td>Year</td><td id="infoYear"></td></tr>
+                <tr><td>Genre</td><td id="infoGenre"></td></tr>
+                <tr>
+                  <td>Rating</td>
+                  <td>
+                    <span class="stars" id="infoStars"></span>
+                    <span id="infoRating" style="margin-left:8px;color:var(--gold);font-weight:500;"></span>
+                  </td>
+                </tr>
+                <tr><td>Runtime</td><td id="infoRuntime"></td></tr>
+                <tr><td>Studio</td><td id="infoStudio"></td></tr>
+              </tbody>
+            </table>
+            <div class="d-flex gap-3 flex-wrap">
+              <button id="scrollTrailer" class="btn btn-gold">&#9654; Watch Trailer</button>
+              <a href="movies.html" class="btn btn-outline-gold">&larr; All Movies</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trailer ────────────────────────────────────────────── -->
+  <section class="trailer-section" id="trailerSection">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-label">Official Trailer</span>
+        <h2 class="section-title" id="trailerTitle"></h2>
+        <hr class="section-divider center" />
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="trailer-wrap">
+            <iframe id="trailerFrame" src="" title="Movie Trailer"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Related Cards ──────────────────────────────────────── -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="mb-5">
+        <span class="section-label">You May Also Like</span>
+        <h2 class="section-title">More Movies</h2>
+        <hr class="section-divider" />
+      </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+        <div class="col afu d1">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/interstellar.jpg" alt="Interstellar" loading="lazy" />
+              <span class="card-rating">★ 8.7</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Drama</p>
+              <h3 class="card-title-text">Interstellar</h3>
+              <p class="card-desc">Explorers travel through a wormhole seeking humanity's next home.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=interstellar" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col afu d2">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/inception.jpg" alt="Inception" loading="lazy" />
+              <span class="card-rating">★ 8.8</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Sci-Fi / Thriller</p>
+              <h3 class="card-title-text">Inception</h3>
+              <p class="card-desc">A thief enters dreams to steal secrets and is tasked with planting one.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=inception" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col afu d3">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/darkknight.jpg" alt="The Dark Knight" loading="lazy" />
+              <span class="card-rating">★ 9.0</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Action / Crime</p>
+              <h3 class="card-title-text">The Dark Knight</h3>
+              <p class="card-desc">Batman faces the Joker, who plunges Gotham into anarchy and chaos.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=darkknight" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col afu d4">
+          <div class="movie-card">
+            <div class="card-img-wrap">
+              <img src="images/endgame.jpg" alt="Avengers: Endgame" loading="lazy" />
+              <span class="card-rating">★ 8.4</span>
+            </div>
+            <div class="card-body-inner">
+              <p class="card-genre">Action / Superhero</p>
+              <h3 class="card-title-text">Avengers: Endgame</h3>
+              <p class="card-desc">The Avengers assemble one final time to undo Thanos and restore the universe.</p>
+              <div class="card-footer-inner">
+                <a href="details.html?movie=endgame" class="btn btn-gold w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER  (identical on every page)-->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <p class="footer-brand">CineScope</p>
+          <p class="footer-tagline">Your cinematic universe,<br>discovered and curated.</p>
+        </div>
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="details.html">Details</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-4 mb-md-0">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-links">
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 CineScope. Crafted for cinema lovers everywhere.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
